@@ -13,8 +13,8 @@ export async function handler(event, context, callback){
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
     const transport = nodemailer.createTransport({
     host: "smtp.sina.com", // 主机
-    secureConnection: true, // 使用 SSL
-    port: 465, // SMTP 端口
+    secureConnection: false, // 使用 SSL
+    port: 25, // SMTP 端口
     auth: {
         user: "518maomao@sina.com",
         pass: "maomao518"
