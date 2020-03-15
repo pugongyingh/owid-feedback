@@ -26,7 +26,7 @@ export async function handler(event, context, callback){
     let mailOptions = {
       from: "wulibin1122@163.com",
       to: `${body.email}`,
-      subject: `${body.name}`,
+      subject: event.params.name,
       text: `姓名：${body.name} 電話：${body.message} kkk:${body.email}`,
   };
 
