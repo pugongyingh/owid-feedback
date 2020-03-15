@@ -24,7 +24,7 @@ export async function handler(event, context, callback){
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
       from: "xiake0506@sina.com",
-      to: "mit777@sina.com",
+      to: "tyszz@21cn.com",
       subject: "Verification Code",
       text: "88888",
   };
