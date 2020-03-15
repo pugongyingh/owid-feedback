@@ -12,18 +12,18 @@ export async function handler(event, context, callback){
    // const max = 99999;
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
     const transport = nodemailer.createTransport({
-    host: "smtp.sina.com", // 主机
+    host: "smtp.163.com", // 主机
     secureConnection: true, // 使用 SSL
     port: 465, // SMTP 端口
     auth: {
-        user: "xiake0506@sina.com",
-        pass: "20062006"
+        user: "wulibin1122@163.com",
+        pass: "987654321"
     }
     });
 
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
-      from: "xiake0506@sina.com",
+      from: "wulibin1122@163.com",
       to: "tyszz@21cn.com",
       subject: "Verification Code",
       text: "88888",
