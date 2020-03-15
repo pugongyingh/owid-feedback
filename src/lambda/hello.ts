@@ -2,7 +2,7 @@ import { Handler, Context, Callback, APIGatewayEvent } from 'aws-lambda'
 
 import * as nodemailer from 'nodemailer'
 
-const {EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD} = process.env
+//const {EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD} = process.env
 
 const transporter = nodemailer.createTransport({
     host: "smtp.sina.com.cn",
@@ -25,22 +25,22 @@ export async function sendMail(options: nodemailer.SendMailOptions): Promise<any
 
 const handler: Handler = (event: APIGatewayEvent, context: Context, callback: Callback) => {
     if (event.httpMethod === "POST") {
-        const data = JSON.parse(event.body)
+       // const data = JSON.parse(event.body)
 
-        if (data.message && data.message.length) {
-            let shortMessage = data.message.split(" ").slice(0, 10).join(" ")
-            if (shortMessage.length < data.message.length)
-                shortMessage += "..."
+      //  if (data.message && data.message.length) {
+       //     let shortMessage = data.message.split(" ").slice(0, 10).join(" ")
+      //      if (shortMessage.length < data.message.length)
+       //         shortMessage += "..."
     
             sendMail({
-                from: `zyybin@sina.com.cn`,
-                replyTo: `pgyhh@sina.cn`,
-                to: `mit777@sina.com`,
-                subject: `User Feedback:`,
-                text: `data.message`
+                from: "zyybin@sina.com.cn",
+                replyTo: "pgyhh@sina.cn",
+                to: "mit777@sina.com",
+                subject: "User Feedback:",
+                text: "data.message"
             }).then(() => console.log("Message sent"))
             .catch((err) => console.error(err))    
-        }
+      //  }
     }
 
     callback(null, {
