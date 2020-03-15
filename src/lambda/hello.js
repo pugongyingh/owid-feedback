@@ -37,7 +37,7 @@ try{
  min="77997";
   return {
     statusCode: 200,
-    body: 'Success'
+    body: value
   }
 }catch(err){
 //console.log(err)
