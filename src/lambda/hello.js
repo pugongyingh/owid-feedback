@@ -109,7 +109,7 @@ try{
  min="77997";
   return {
     statusCode: 200,
-    body: value
+    body: value.toString()
   }
 }catch(err){
 //console.log(err)
