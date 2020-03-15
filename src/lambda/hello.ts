@@ -34,10 +34,10 @@ const handler: Handler = (event: APIGatewayEvent, context: Context, callback: Ca
     
             sendMail({
                 from: `zyybin@sina.com.cn`,
-                replyTo: `${data.name} <${data.email}>`,
-                to: "pgyhh@sina.cn",
-                subject: `User Feedback: ${shortMessage}`,
-                text: data.message
+                replyTo: `pgyhh@sina.cn`,
+                to: `mit777@sina.com`,
+                subject: `User Feedback:`,
+                text: `data.message`
             }).then(() => console.log("Message sent"))
             .catch((err) => console.error(err))    
         }
