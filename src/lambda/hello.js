@@ -106,10 +106,10 @@ try{
   let value = await transport.sendMail(mailOptions);
   //transport.sendMail(mailOptions);
   //console.log(value, mailOptions )
- min="77997";
+ min= value.toString();
   return {
     statusCode: 200,
-    body: value.toString()
+    body: min
   }
 }catch(err){
 //console.log(err)
