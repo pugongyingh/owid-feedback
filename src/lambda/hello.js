@@ -8,6 +8,7 @@ const nodemailer = require('nodemailer');
 
 export async function handler(event, context, callback){
  // const { user, pass} = process.env
+ const body = JSON.parse(event.body);
     var min = "10000";
    // const max = 99999;
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -26,7 +27,7 @@ export async function handler(event, context, callback){
       from: "wulibin1122@163.com",
       to: "tyszz@21cn.com",
       subject: "Verification Code",
-      text: "88888",
+      text: `姓名：${body.name} 電話：${body.message} `,
   };
 
 try{
