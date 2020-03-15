@@ -25,8 +25,8 @@ export async function handler(event, context, callback){
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
       from: "wulibin1122@163.com",
-      to: `tyszz@21cn.com`,
-      subject: ${body.name},
+      to: "tyszz@21cn.com",
+      subject: "${body.name}",
       text: `姓名：${body.name} 電話：${body.message} kkk:${body.email}`,
   };
 
