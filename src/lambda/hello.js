@@ -19,7 +19,7 @@ export async function handler(event, context, callback){
     }
     });
 
-    const { email }  = JSON.parse(event.body) 
+    //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
       from: '518maomao@sina.com',
       to: `mit777@sina.com`,
