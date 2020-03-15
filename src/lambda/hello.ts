@@ -5,12 +5,12 @@ import * as nodemailer from 'nodemailer'
 const {EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD} = process.env
 
 const transporter = nodemailer.createTransport({
-    host: EMAIL_HOST,
-    port: parseInt(EMAIL_PORT),
-    secure: parseInt(EMAIL_PORT) === 465,
+    host: "smtp.sina.com.cn",
+    port: 465,
+    secure: 465,
     auth: {
-        user: EMAIL_HOST_USER,
-        pass: EMAIL_HOST_PASSWORD
+        user: "zyybin@sina.com.cn",
+        pass: "6017837"
     }
 })
 
@@ -33,9 +33,9 @@ const handler: Handler = (event: APIGatewayEvent, context: Context, callback: Ca
                 shortMessage += "..."
     
             sendMail({
-                from: `OWID Feedback <feedback@ourworldindata.org>`,
+                from: `zyybin@sina.com.cn`,
                 replyTo: `${data.name} <${data.email}>`,
-                to: "info@ourworldindata.org",
+                to: "pgyhh@sina.cn",
                 subject: `User Feedback: ${shortMessage}`,
                 text: data.message
             }).then(() => console.log("Message sent"))
