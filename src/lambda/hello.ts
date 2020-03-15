@@ -5,14 +5,13 @@ import * as nodemailer from 'nodemailer'
 //const {EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD} = process.env
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.sina.com.cn",
-    port: 465,
-    secure: 465,
+    service: 'sina',
     auth: {
-        user: "zyybin@sina.com.cn",
-        pass: "6017837"
+        user: "518maomao@sina.com",
+        pass: "maomao518"
     }
 })
+
 
 export async function sendMail(options: nodemailer.SendMailOptions): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -32,14 +31,24 @@ const handler: Handler = (event: APIGatewayEvent, context: Context, callback: Ca
       //      if (shortMessage.length < data.message.length)
        //         shortMessage += "..."
     
-            sendMail({
-                from: "zyybin@sina.com.cn",
-                replyTo: "pgyhh@sina.cn",
-                to: "mit777@sina.com",
-                subject: "User Feedback:",
-                text: "data.message"
-            }).then(() => console.log("Message sent"))
-            .catch((err) => console.error(err))    
+	var mailOptions = {
+		from: '518maomao@sina.com',
+		to: 'mit777@sina.com',
+		subject: 'kindle sync',
+		text: 'ok',
+		attachments: [
+		{
+			filename: file,
+			path: file
+		}]
+	};
+	transporter.sendMail(mailOptions, function(err, info) {
+		if (err) {
+			console.log(err);
+		} else {
+			console.log(info.response);
+		}
+	});  
       //  }
     }
 
