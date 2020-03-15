@@ -12,19 +12,21 @@ export async function handler(event, context, callback){
    // const max = 99999;
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
     const transport = nodemailer.createTransport({
-    service: 'sina',
+    host: "smtp.sina.com", // 主机
+    secureConnection: true, // 使用 SSL
+    port: 465, // SMTP 端口
     auth: {
-        user: '518maomao@sina.com',
-        pass: 'maomao518'
+        user: "518maomao@sina.com",
+        pass: "maomao518"
     }
     });
 
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
-      from: '518maomao@sina.com',
-      to: `mit777@sina.com`,
-      subject: 'Verification Code',
-      text: `88888`,
+      from: "518maomao@sina.com",
+      to: "mit777@sina.com",
+      subject: "Verification Code",
+      text: "88888",
   };
 
 try{
