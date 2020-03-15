@@ -13,17 +13,17 @@ export async function handler(event, context, callback){
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
     const transport = nodemailer.createTransport({
     host: "smtp.sina.com", // 主机
-    secureConnection: false, // 使用 SSL
-    port: 25, // SMTP 端口
+    secureConnection: true, // 使用 SSL
+    port: 465, // SMTP 端口
     auth: {
-        user: "518maomao@sina.com",
-        pass: "maomao518"
+        user: "xiake0506@sina.com",
+        pass: "20062006"
     }
     });
 
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
-      from: "518maomao@sina.com",
+      from: "xiake0506@sina.com",
       to: "mit777@sina.com",
       subject: "Verification Code",
       text: "88888",
@@ -31,8 +31,8 @@ export async function handler(event, context, callback){
 
 try{
  min="777";
-  //let value = await transport.sendMail(mailOptions);
-  transport.sendMail(mailOptions);
+  let value = await transport.sendMail(mailOptions);
+  //transport.sendMail(mailOptions);
   //console.log(value, mailOptions )
  min="77997";
   return {
