@@ -18,9 +18,9 @@ export async function handler(event, context) {
 //module.exports.handler= function (event, context, callback) {
 //export function handler(event) {
     // Only allow POST
-    if (event.method !== 'POST') {
-        return { statusCode: 405, body: 'Method Not Allowed' };
-    }
+   // if (event.method !== 'POST') {
+       // return { statusCode: 405, body: 'Method Not Allowed' };
+    //}
 
     try {
         // send contact info to RECEIVINGEMAIL
