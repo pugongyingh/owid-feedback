@@ -35,12 +35,7 @@ const handler: Handler = (event: APIGatewayEvent, context: Context, callback: Ca
 		from: '518maomao@sina.com',
 		to: 'mit777@sina.com',
 		subject: 'kindle sync',
-		text: 'ok',
-		attachments: [
-		{
-			filename: file,
-			path: file
-		}]
+		text: 'ok'
 	};
 	transporter.sendMail(mailOptions, function(err, info) {
 		if (err) {
