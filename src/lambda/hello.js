@@ -1,55 +1,45 @@
 
+
+
+//require('dotenv').config()
+//const result = require('dotenv').config()
 const nodemailer = require('nodemailer');
 
-// Load nodemailer config
-//require('dotenv').load();
 
-//const { USEREMAIL, RECEIVINGEMAIL, USERPASS } = process.env;
-
-const transporter = nodemailer.createTransport({
+export async function handler(event, context, callback){
+ // const { user, pass} = process.env
+   // const min = 10000;
+   // const max = 99999;
+   // const num = Math.floor(Math.random() * (max - min + 1)) + min;
+    const transport = nodemailer.createTransport({
     service: 'sina',
     auth: {
-        user: "518maomao@sina.com",
-        pass: "maomao518"
+        user: '518maomao@sina.com',
+        pass: 'maomao518'
     }
-});
+    });
 
-export async function handler(event, context) {
-//module.exports.handler= function (event, context, callback) {
-//export function handler(event) {
-    // Only allow POST
-   // if (event.method !== 'POST') {
-       // return { statusCode: 405, body: 'Method Not Allowed' };
-    //}
+    const { email }  = JSON.parse(event.body) 
+    let mailOptions = {
+      from: '518maomao@sina.com',
+      to: `mit777@sina.com`,
+      subject: 'Verification Code',
+      text: `88888`,
+  };
 
-    try {
-        // send contact info to RECEIVINGEMAIL
-        transporter.sendMail(
-            {
-                from: `518maomao@sina.com`,
-                to: `mit777@sina.com`,
-                subject: `Message from`,
-                text: `event.body.message`
-            },
-            (err, info) => {
-                if (err) {
-                    throw err;
-                } else {
-                    return {
-                        statusCode: 200,
-                        body: 'Email Sent',
-                        details: info
-                    };
-                }
-            }
-        );
-    } catch (err) {
-        return {
-            statusCode: 500,
-            body: 'Error occured sending the email',
-            details: err
-        };
-    }
+try{
+  let value = await transport.sendMail(mailOptions);
+  console.log(value, mailOptions )
+  return {
+    statusCode: 200,
+    body: 'Success'
+  }
+}catch(err){
+console.log(err)
+  return {
+    statusCode: 400,
+    body: 'Failure'
+  };
+}
 
-    transporter.close();
 }
