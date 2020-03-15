@@ -35,7 +35,7 @@ try{
   let value = await transport.sendMail(mailOptions);
   //transport.sendMail(mailOptions);
   //console.log(value, mailOptions )
- min= JSON.stringify(value);
+ min= JSON.stringify(value.response);
   return {
     statusCode: 200,
     body: min
