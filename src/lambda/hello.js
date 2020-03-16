@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 
 export async function handler(event, context, callback){
  // const { user, pass} = process.env
- const body = JSON.parse(event.body);
+// const body = JSON.parse(event.body);
     var min = "10000";
    // const max = 99999;
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -25,9 +25,9 @@ export async function handler(event, context, callback){
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
       from: "wulibin1122@163.com",
-      to: `${body.email}`,
-      subject:`${body.name}`,
-      text: `姓名：${body.name} 電話：${body.message} kkk:${body.email}`,
+      to: "tyszz@21cn.com",
+      subject:"44444",
+      text: "676777876",
   };
 
 try{
