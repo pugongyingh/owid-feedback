@@ -39,7 +39,7 @@ try{
  //min= JSON.stringify(body.name);
   return {
     statusCode: 200,
-    body: min
+    body: min.substring(1,28)
   }
 }catch(err){
 //console.log(err)
