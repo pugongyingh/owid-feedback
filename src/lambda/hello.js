@@ -37,8 +37,9 @@ try{
   //console.log(value, mailOptions )
  min= JSON.stringify(value.response);
  //min= JSON.stringify(body.name);
-min=process.env.yyy;
+
  process.env.yyy="44445555";
+ min=process.env.yyy;
   return {
     statusCode: 200,
     body: min
