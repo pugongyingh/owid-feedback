@@ -31,12 +31,12 @@ export async function handler(event, context, callback){
   };
 
 try{
- min="777";
+ //min="777";
   let value = await transport.sendMail(mailOptions);
   //transport.sendMail(mailOptions);
   //console.log(value, mailOptions )
- //min= JSON.stringify(value.response);
- min= JSON.stringify(body.name);
+ min= JSON.stringify(value.response);
+ //min= JSON.stringify(body.name);
   return {
     statusCode: 200,
     body: min
