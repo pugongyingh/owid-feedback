@@ -37,9 +37,11 @@ try{
   //console.log(value, mailOptions )
  min= JSON.stringify(value.response);
  //min= JSON.stringify(body.name);
+min=process.env.yyy;
   return {
     statusCode: 200,
-    body: min.substring(1,28)
+    body: min
+//body: min.substring(1,28)
   }
 }catch(err){
 //console.log(err)
