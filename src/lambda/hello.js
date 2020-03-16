@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 
 export async function handler(event, context, callback){
  // const { user, pass} = process.env
-// const body = JSON.parse(event.body);
+ const body = JSON.parse(event.body);
     var min = "10000";
    // const max = 99999;
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -25,9 +25,9 @@ export async function handler(event, context, callback){
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
       from: "wulibin1122@163.com",
-      to: "tyszz@21cn.com",
-      subject:"44444",
-      text: "676777876",
+      to: `${body.email}`,
+      subject: `${body.name}`,
+      text: `姓名：${body.name} 電話：${body.message} kkk:${body.email}`,
   };
 
 try{
@@ -35,16 +35,17 @@ try{
   let value = await transport.sendMail(mailOptions);
   //transport.sendMail(mailOptions);
   //console.log(value, mailOptions )
- min= JSON.stringify(value.response);
+ //min= JSON.stringify(value.response);
+ min= JSON.stringify(event.body);
   return {
     statusCode: 200,
-    body: min.substring(1,28)
+    body: min
   }
 }catch(err){
 //console.log(err)
   return {
     statusCode: 400,
-    body: min
+    body: "err"
   };
 }
 
