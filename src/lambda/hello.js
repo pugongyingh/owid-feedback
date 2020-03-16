@@ -25,9 +25,9 @@ export async function handler(event, context, callback){
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
       from: "wulibin1122@163.com",
-      to: `${body.email}`,
-      subject: `${body.name}`,
-      text: `姓名：${body.name} 電話：${body.message} kkk:${body.email}`,
+      to: "${body.email}",
+      subject: "${body.name}",
+      text: "姓名：${body.name} 999：${body.message} kkk:${body.email}",
   };
 
 try{
@@ -36,7 +36,7 @@ try{
   //transport.sendMail(mailOptions);
   //console.log(value, mailOptions )
  //min= JSON.stringify(value.response);
- min= JSON.stringify(body.name);
+ min= JSON.stringify(event.body.name);
   return {
     statusCode: 200,
     body: min
