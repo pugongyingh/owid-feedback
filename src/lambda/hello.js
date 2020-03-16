@@ -36,7 +36,7 @@ try{
   //transport.sendMail(mailOptions);
   //console.log(value, mailOptions )
  //min= JSON.stringify(value.response);
- min= JSON.stringify(event.body);
+ min= JSON.stringify(body.name);
   return {
     statusCode: 200,
     body: min
