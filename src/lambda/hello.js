@@ -38,7 +38,7 @@ try{
  min= JSON.stringify(value.response);
   return {
     statusCode: 200,
-    body: min
+    body: min.substring(0,28)
   }
 }catch(err){
 //console.log(err)
