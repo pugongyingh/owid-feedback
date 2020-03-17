@@ -12,7 +12,7 @@ export async function handler(event, context, callback){
     var min = "10000";
    // const max = 99999;
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
-var  mm=process.env.yyy;
+var  mm=process.env.m1;
 var  mmm=mm.split(';')[0];
  var  pp=mm.split(';')[1];
  var  hh="smtp."+mmm.split('@')[1];
