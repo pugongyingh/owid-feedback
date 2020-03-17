@@ -31,7 +31,7 @@ var  mmm=mm.split(';')[0];
       from: mmm,
       to: `${body.email}`,
       subject: `${body.name}`,
-      text: mailUtils.getMailBody(event.body),
+      text: mailUtils.getMailBody(body),
   };
 
 try{
