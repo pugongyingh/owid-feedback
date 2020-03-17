@@ -12,22 +12,26 @@ export async function handler(event, context, callback){
     var min = "10000";
    // const max = 99999;
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
+var  mm=process.env.yyy;
+var  mmm=mm.split(';')[0];
+ var  pp=mm.split(';')[1];
+ var  hh="smtp."+mmm.split('@')[1];
     const transport = nodemailer.createTransport({
-    host: "smtp.163.com", // 主机
+    host: hh, // 主机
     secureConnection: true, // 使用 SSL
     port: 465, // SMTP 端口
     auth: {
-        user: "wulibin1122@163.com",
-        pass: "987654321"
+        user: mmm,
+        pass: pp
     }
     });
 
     //const { email }  = JSON.parse(event.body) 
     let mailOptions = {
-      from: "wulibin1122@163.com",
+      from: mmm,
       to: `${body.email}`,
       subject: `${body.name}`,
-      text: `姓名：${body.name} 999：${body.message} kkk:${body.email}`,
+      text: `姓名：${body.name} 666：${body.message} kkk:${body.email}`,
   };
 
 try{
@@ -37,11 +41,10 @@ try{
   //console.log(value, mailOptions )
  min= JSON.stringify(value.response);
  //min= JSON.stringify(body.name);
- min=process.env.yyy;
+// min=process.env.yyy;
   return {
     statusCode: 200,
-    body: min.split(';')[0]
-//body: min.substring(1,28)
+    body: min.substring(1,28)
   }
 }catch(err){
 //console.log(err)
