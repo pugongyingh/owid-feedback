@@ -1,13 +1,16 @@
 const mailUtils = {
   getMailBody: content => {
     const details = {
-      name: content.name
+      name: content.name,
+      message: content.message,
+      email: content.email
     };
 
     return `Hi there!\n
         Someone did something. Here is what they did:
         Name: ${details.name}\n
-        --\n
+         ${details.email}\n
+         ${details.message}\n
         Salutation`;
   },
   getUserMailBody: () => {
