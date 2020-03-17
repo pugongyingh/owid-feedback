@@ -5,7 +5,7 @@
 //const result = require('dotenv').config()
 const nodemailer = require('nodemailer');
 
-
+const mailUtils = require("../mail");
 export async function handler(event, context, callback){
  // const { user, pass} = process.env
  const body = JSON.parse(event.body);
@@ -31,7 +31,7 @@ var  mmm=mm.split(';')[0];
       from: mmm,
       to: `${body.email}`,
       subject: `${body.name}`,
-      text: `姓名：${body.name} 666：${body.message} kkk:${body.email}`,
+      text: mailUtils.getMailBody(event.body),
   };
 
 try{
