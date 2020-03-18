@@ -14,9 +14,6 @@ export async function handler(event, context, callback){
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
 var  mm;
 var  tmp;
-var  mmm=mm.split(';')[0];
- var  pp=mm.split(';')[1];
- var  hh="smtp."+mmm.split('@')[1];
   var  ss = body.send;
   var  tt = body.tmp;
    switch (ss) {
@@ -73,6 +70,9 @@ var  mmm=mm.split(';')[0];
     default:
       tmp = mailUtils.getMailBody1(body);
   }
+ var  mmm=mm.split(';')[0];
+ var  pp=mm.split(';')[1];
+ var  hh="smtp."+mmm.split('@')[1];
     const transport = nodemailer.createTransport({
     host: hh, // 主机
     secureConnection: true, // 使用 SSL
