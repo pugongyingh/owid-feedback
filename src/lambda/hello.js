@@ -14,6 +14,7 @@ export async function handler(event, context, callback){
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
 var  mm;
 var  tmp;
+ var  sub;
   var  ss = parseInt(body.send);
   var  tt = parseInt(body.tmp);
    switch (ss) {
@@ -70,6 +71,25 @@ var  tmp;
     default:
       tmp = mailUtils.getMailBody1(body);
   }
+   switch (tt) {
+    case 1:
+      sub = mailUtils.getMailSub1(body);
+      break;
+    case 2:
+      sub = mailUtils.getMailSub2(body);
+      break;
+    case 3:
+      sub = mailUtils.getMailSub3(body);
+      break;
+    case 4:
+      sub = mailUtils.getMailSub4(body);
+      break;
+    case 5:
+      sub = mailUtils.getMailSub5(body);
+      break;
+    default:
+      sub = mailUtils.getMailSub1(body);
+  }
  var  mmm=mm.split(';')[0];
  var  pp=mm.split(';')[1];
  var  hh="smtp."+mmm.split('@')[1];
@@ -87,7 +107,7 @@ var  tmp;
     let mailOptions = {
       from: mmm,
       to: `${body.email}`,
-      subject: `${body.name}`,
+      subject: sub,
       text: tmp,
   };
 
