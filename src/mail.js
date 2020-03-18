@@ -68,6 +68,38 @@ const mailUtils = {
          ${details.email}\n
          ${details.message}\n
         Salutation`;
+  },
+    getMailSub1: content => {
+    const details = {
+      name: content.name
+    };
+    return `Hi there!${details.name}`;
+  },
+  getMailSub2: content => {
+    const details = {
+      name: content.name
+    };
+    return `Hi there!${details.name}`;
+  },
+  getMailSub3: content => {
+    const details = {
+      name: content.name
+    };
+    return `Hi there!${details.name}`;
+  },
+  getMailSub4: content => {
+    const details = {
+      name: content.name
+    };
+
+    return `Hi there!${details.name}`;
+  },
+  getMailSub5: content => {
+    const details = {
+      name: content.name
+    };
+
+    return `Hi there!${details.name}`;
   }
 };
 
