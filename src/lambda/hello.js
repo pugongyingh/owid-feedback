@@ -14,8 +14,8 @@ export async function handler(event, context, callback){
    // const num = Math.floor(Math.random() * (max - min + 1)) + min;
 var  mm;
 var  tmp;
-  var  ss = body.send;
-  var  tt = body.tmp;
+  var  ss = parseInt(body.send);
+  var  tt = parseInt(body.tmp);
    switch (ss) {
     case 1:
      mm =process.env.m1;
