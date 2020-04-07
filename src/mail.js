@@ -7,8 +7,8 @@ const mailUtils = {
     };
 
     return `${details.name}您好!\n
-    贵公司是否有程序开发，网站，微信小程序设计开发需求，或网络推广方面需要一些技术支持。
-如果您有这方面的疑问或需求请联系我：www.hr9.top`;
+    扫码自助点餐，顾客只需扫描桌面二维码，即可自助点餐，无需等待服务员到场。同时，后厨根据点餐内容即可按桌号备餐，全程自动化！帮助你实现高峰期客户分流，人力成本立减30%,并且增加顾客体验感。
+如果您有这方面的需求请联系我们：www.smdc.vip`;
   },
   getMailBody2: content => {
     const details = {
@@ -18,8 +18,8 @@ const mailUtils = {
     };
 
     return `${details.name}您好!\n
-    贵公司是否有程序开发，网站，微信小程序设计开发需求，或网络推广方面需要一些技术支持。
-如果您有这方面的疑问或需求请联系我：www.hr9.top`;
+    扫码自助点餐，顾客只需扫描桌面二维码，即可自助点餐，无需等待服务员到场。同时，后厨根据点餐内容即可按桌号备餐，全程自动化！帮助你实现高峰期客户分流，人力成本立减30%。
+如果您有这方面的需求请联系我们：www.smdc.vip`;
   },
   getMailBody3: content => {
     const details = {
@@ -29,8 +29,8 @@ const mailUtils = {
     };
 
     return `${details.name}您好!\n
-    如您有程序开发，网站，微信小程序设计开发需求，或网络推广方面需要一些技术支持。
-请联系我：www.hr9.top`;
+    扫码自助点餐，顾客只需扫描桌面二维码，即可自助点餐，无需等待服务员到场。同时，后厨根据点餐内容即可按桌号备餐，全程自动化！有效缓解酒店餐厅用餐高峰情况，提升门店效率。
+如果您有这方面的需求请联系我们：www.smdc.vip`;
   },
   getMailBody4: content => {
     const details = {
@@ -40,7 +40,8 @@ const mailUtils = {
     };
 
     return `${details.name}您好!\n
-    你是否有关于网络的事情搞不定，或你有些想法需要网络开发技术支持，亦或你在组建自己的技术团队还是把技术外包而犹豫不决。如果您有这方面的疑问或需求请联系我，联系方式和介绍请到：www.hr9.top  我随时为您远程工作。`;
+    扫码自助点餐，顾客只需扫描桌面二维码，即可自助点餐，无需等待服务员到场。同时，后厨根据点餐内容即可按桌号备餐，全程自动化！帮助你实现高峰期客户分流，人力成本立减30%。
+如果您有这方面的需求请联系我们：www.smdc.vip`;
   },
   getMailBody5: content => {
     const details = {
@@ -49,40 +50,41 @@ const mailUtils = {
       email: content.email
     };
 
-    return  `${details.name}您好!\n
-    贵公司是否有关于网络的事情搞不定，或你有些想法需要网络开发技术支持，亦或你在组建自己的技术团队还是把技术外包而犹豫不决。如果您有这方面的疑问或需求请联系我，简介：www.hr9.top  我可以随时在线为您工作。`;
+    return `${details.name}您好!\n
+    扫码自助点餐，顾客只需扫描桌面二维码，即可自助点餐，无需等待服务员到场。同时，后厨根据点餐内容即可按桌号备餐，全程自动化！用餐高峰，也无需增加人力。
+如果您有这方面的需求请联系我们：www.smdc.vip`;
   },
     getMailSub1: content => {
     const details = {
       name: content.name
     };
-    return `求职`;
+    return `扫码自助点餐`;
   },
   getMailSub2: content => {
     const details = {
       name: content.name
     };
-    return `求职`;
+    return `扫码点餐`;
   },
   getMailSub3: content => {
     const details = {
       name: content.name
     };
-    return `求职`;
+    return `扫二维码自助点餐`;
   },
   getMailSub4: content => {
     const details = {
       name: content.name
     };
 
-    return `求职`;
+    return `扫码二维码点餐`;
   },
   getMailSub5: content => {
     const details = {
       name: content.name
     };
 
-    return `求职`;
+    return `自助点餐应用`;
   }
 };
 
